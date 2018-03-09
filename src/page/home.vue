@@ -20,7 +20,8 @@
 </template>
 <script>
 import fuckit from '../request/request.js';
-import createBus from '../../server/bus'
+import createBus from '../../server/bus';
+import Howl from 'howler';
 var bus = createBus()
     export default {
     
@@ -37,6 +38,7 @@ var bus = createBus()
         },
         mounted () {
             var vm = this;
+            console.log(Howl.Howl)
             fuckit.auth().then(user => {
                 console.log(user)
                 vm.isLogin = true

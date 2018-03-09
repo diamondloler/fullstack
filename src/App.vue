@@ -35,7 +35,7 @@ export default {
       vm.$refs.luye.start();
     });
     bus.$on("ajax.end", function(l) {
-      vm.$refs.luye.end();
+      vm.$refs.luye.finish();
     });
     bus.$on("login", function(val) {
       vm.isLogin = val;
