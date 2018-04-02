@@ -12,6 +12,7 @@ import fucktop from "./components/fucktop";
 import yiluye from "./components/yiluye";
 import createBus from "../server/bus";
 
+
 var bus = createBus();
 
 export default {

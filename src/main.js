@@ -4,6 +4,7 @@ import Vue from 'vue'
 import 'babel-polyfill'
 import App from './App'
 import Router from './route.config'
+import Store from './store'
 import element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import './common/common.css'
@@ -34,5 +35,6 @@ new Vue({
   components: {
     App
   },
+  store: Store,
   router: Router
 })

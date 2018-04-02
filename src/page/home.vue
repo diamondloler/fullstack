@@ -14,14 +14,16 @@
     
         </el-main>
     
-        <el-footer></el-footer>
+        <el-footer>
+            {{justTest}}
+        </el-footer>
     
     </el-contianer>
 </template>
 <script>
 import fuckit from '../request/request.js';
 import createBus from '../../server/bus';
-import Howl from 'howler';
+import {mapState} from 'vuex';
 var bus = createBus()
     export default {
     
@@ -31,14 +33,24 @@ var bus = createBus()
                 isLogin:false,
                 user: {
                     username:''
-                }
+                },
+                test: 6666
     
             }
     
         },
+        computed: mapState({
+            numAlias: 'num',
+            justTest (state) {
+                return state.num + this.test
+            }
+        }),
         mounted () {
             var vm = this;
-            console.log(Howl.Howl)
+            console.log(vm.$store)
+            console.log(vm.$store.getters.getNum)
+            vm.$store.commit('add')
+            vm.$store.dispatch('changeNum', 9527)
             fuckit.auth().then(user => {
                 console.log(user)
                 vm.isLogin = true
